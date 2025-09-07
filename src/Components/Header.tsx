@@ -1,45 +1,35 @@
-// src/components/Header.tsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { Plane } from "lucide-react"; // simple travel icon
+import "./Header.css"; // ✅ Import CSS
+import logo from "../assets/Header/Logo.png"; // ✅ Adjust path as per your folder structure
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
+    <header className="header shadow-sm fixed-top">
+      <div className="container d-flex align-items-center justify-content-between py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-2">
-          <Plane className="text-blue-600" size={28} />
-          <span className="text-xl font-bold text-gray-800">
-            TravelPro
-          </span>
+        <Link to="/" className="logo">
+          <img src={logo} alt="Namaste Bharat Logo" className="logo-img" />
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden md:flex space-x-8 text-gray-700 font-medium">
-          <Link to="/" className="hover:text-blue-600 transition">
+        <nav className="nav-links d-none d-md-flex">
+          <Link to="/" className="nav-item">
             Home
           </Link>
-          <Link to="/destinations" className="hover:text-blue-600 transition">
-            Destinations
-          </Link>
-          <Link to="/about" className="hover:text-blue-600 transition">
+          <Link to="/about" className="nav-item">
             About
           </Link>
-          <Link to="/contact" className="hover:text-blue-600 transition">
-            Contact
+          <Link to="/explore-map" className="nav-item">
+            Explore Map
+          </Link>
+          <Link to="/contact" className="nav-item">
+            Contact Us
+          </Link>
+          <Link to="/signup" className="btn signup-btn">
+            Signup
           </Link>
         </nav>
-
-        {/* Call-to-Action */}
-        <div>
-          <Link
-            to="/book"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition"
-          >
-            Book Now
-          </Link>
-        </div>
       </div>
     </header>
   );
