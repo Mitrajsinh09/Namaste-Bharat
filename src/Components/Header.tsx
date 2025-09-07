@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css"; // ✅ Import CSS
-import logo from "../assets/Header/Logo.png"; // ✅ Adjust path as per your folder structure
+import logo from "../Assets/Header/Logo.png"; // ✅ Adjust path as per your folder structure
 
 const Header: React.FC = () => {
   return (
