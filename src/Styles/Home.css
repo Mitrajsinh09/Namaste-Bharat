@@ -1,62 +1,228 @@
-/* 🌍 Hero Section */
+/* ===========================
+   Global Page Styling
+=========================== */
+.home-page {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
 .hero-section {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 1.25rem;
+  max-width: 700px;
+}
+
+/* ===========================
+   Intro Section
+=========================== */
+.container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.container p {
+  font-size: 1.1rem;
+}
+
+/* ===========================
+   Top Destinations Section
+=========================== */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.place-card {
+  width: 16rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  min-height: 340px;
+}
+
+.place-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.place-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.fade-slider {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.btn.btn-outline-dark {
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+}
+
+/* ===========================
+   Festivals & Culture Section
+=========================== */
+.bg-light .card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.bg-light .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.bg-light .card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ===========================
+   Booking Options Section
+=========================== */
+.booking-card {
+  border-radius: 12px;
+  border: none;
+  background: #fff;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ===========================
+   CTA Section
+=========================== */
+.cta-section {
+  position: relative;
+  background: url("../Assets/States/Gujarat/kutchh.jpg") center/cover no-repeat;
+  padding: 90px 20px;
+  margin-top: 40px;
+}
+
+.cta-section .overlay {
+  background: rgba(0,0,0,0.65);
+  border-radius: 12px;
+  display: inline-block;
+  padding: 50px 30px;
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.cta-section .btn {
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.cta-section .btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* ===========================
+   Responsive Styles
+=========================== */
+@media (max-width: 992px) {
+  .hero-overlay h1 {
+    font-size: 2.5rem;
   }
-  
-  .hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+  .place-card {
+    width: 14rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+  .place-card {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.55);
   }
-  
-  .hero-section h1 {
-    font-size: 3rem;
+  .fade-slider {
+    flex-wrap: wrap;
   }
-  
-  /* 🌍 Section Titles */
-  .section-title {
-    font-weight: 700;
-    color: #333;
+}
+
+@media (max-width: 576px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
   }
-  
-  /* 🌍 Cards */
-  .card img {
-    height: 220px;
-    object-fit: cover;
+  .hero-overlay p {
+    font-size: 0.9rem;
   }
-  
-  .card {
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .cta-section {
+    padding: 60px 15px;
   }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  .cta-section h2 {
+    font-size: 1.8rem;
   }
-  
-  /* 🌍 Booking Section */
-  .booking-section {
-    background: linear-gradient(90deg, #ff9933, #006994);
-  }
-  
-  /* 🌍 Info Boxes */
-  .info-box {
-    padding: 40px 20px;
-    border-radius: 12px;
-    background: #f8f9fa;
-    transition: all 0.3s ease;
-  }
-  
-  .info-box:hover {
-    background: #e9ecef;
-    transform: translateY(-3px);
-  }
-  
+}
